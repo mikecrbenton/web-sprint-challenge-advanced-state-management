@@ -5,13 +5,22 @@ function SmurfList(props) {
 
    console.log("IN SMURFLIST ", props.smurfArray);
 
-   return (
-      <div>
-      <p>{props.smurfArray[0].name}</p>
-      <p>{props.smurfArray[0].age}</p>
-      <p>{props.smurfArray[0].height}</p> 
-   </div>   
-   )
+      return (
+         <div>
+            {console.log("Props.SmurfArray in list: ",props.smurfArray)}
+            { props.smurfArray.map( (smurf) => 
+               <>
+                  {console.log("smurf in list: ", smurf)}
+                  <div key={smurf.id}>
+                     <p>{smurf.name}</p>
+                     <p>{smurf.age}</p>
+                     <p>{smurf.height}</p> 
+                  </div>   
+               </>
+            )
+            }
+         </div>
+      )
 }
 
 const mapStateToProps = (state) => {

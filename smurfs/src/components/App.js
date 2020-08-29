@@ -1,7 +1,6 @@
-import React, { useEffect, Component } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { connect } from 'react-redux';
-import axios from "axios";
 
 import SmurfForm from './smurf_form';
 import SmurfList from './smurf_list';
@@ -15,14 +14,7 @@ function App ( props ) {
       console.log("USE EFFECT IS CALLED");
       props.initializeSmurf();
    }, [initializeSmurf]);
-
-   // axios.get("http://localhost:3333/smurfs")
-   // .then( (res) => {
-   //    console.log(res);
-   // })
-   // .catch(err => console.log("ERROR:", err));
-
-  
+ 
     return (
       <div className="App">
         <h1>SMURFS! W/Redux</h1>

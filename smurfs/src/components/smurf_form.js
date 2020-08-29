@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { connect } from 'react-redux';
 import { getSmurf, postSmurf } from '../actions'
 import styled from 'styled-components';
-import axios from 'axios';
 
 function SmurfForm(props) {
 
@@ -26,7 +25,7 @@ function SmurfForm(props) {
   
   const submitHandler = e => {
     e.preventDefault();
-    console.log("post is called in submit")
+
     props.postSmurf(newSmurf)
   
     //clear form
