@@ -22,12 +22,10 @@ function SmurfForm(props) {
      });
   };
 
-  
   const submitHandler = e => {
     e.preventDefault();
 
     props.postSmurf(newSmurf)
-  
     //clear form
     setNewSmurf({
       name: "",
@@ -38,7 +36,8 @@ function SmurfForm(props) {
    
     return (
        <>
-      <form onSubmit={submitHandler}>
+      <SmurfFormStyling onSubmit={submitHandler}>
+
         <label htmlFor="name">
            Name
             <input
@@ -48,6 +47,7 @@ function SmurfForm(props) {
                value={newSmurf.name} //controlled input - view State
             />
         </label>
+
         <label htmlFor="age">
            Age 
             <input
@@ -57,6 +57,7 @@ function SmurfForm(props) {
                value={newSmurf.age} //controlled input - view State
             />
         </label>
+
         <label htmlFor="height">
            Height
             <input
@@ -66,9 +67,11 @@ function SmurfForm(props) {
                value={newSmurf.height} //controlled input-view State
             />
         </label>
+
         <button type="submit">Add</button>
         <button type="button" onClick={props.getSmurf}>Get Smurfs</button>
-      </form>
+        
+      </SmurfFormStyling>
      
        </>
     );
@@ -81,3 +84,54 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, { postSmurf, getSmurf })(SmurfForm);
+
+const SmurfFormStyling = styled.form`
+   display: flex;
+   flex-direction: column;
+   width: 40%;
+   margin: 0 auto;
+   padding: .5em;
+   border: 10px solid #88CCFF;
+   border-radius: 10px;
+
+   label{
+      margin-bottom: .5em ;
+      display:flex;
+      flex-direction: column;
+      align-items: flex-start;
+      font-weight: 700;
+   }
+   input{
+      width: 75%;
+      padding: .6em .3em;
+      margin: .3em 0;
+      border: 2px solid gray;
+      border-radius: 5px;
+   }
+   button{
+      width: 25%;
+      margin: 1em auto;
+      padding: .3em;
+      border: 2px solid gray;
+      border-radius: 5px;
+   }
+   select{
+      width: 78%;
+      padding: .6em .3em;
+      margin: .3em 0;
+      border: 2px solid gray;
+      border-radius: 5px;
+      font-weight: 700;  
+   }
+   textarea{
+      border: 2px solid gray;
+      border-radius: 5px;
+      width: 96%;
+      height: 40px;
+      margin: .3em 0;
+      padding: .6em .3em;
+      font-weight: 900;
+      font-size: 1.2rem;
+   }
+
+`;
