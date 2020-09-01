@@ -17,9 +17,9 @@ export const smurfReducer = ( state = initialState, action ) => {
    switch(action.type) {
 
       case "INITIALIZE_SMURF":
-         console.log("INITIALIZE SMURF IS CALLED")
-         console.log("state.smurfArray is ", state.smurfArray)
-         console.log("action.payload is: ", action.payload[0])
+            //console.log("INITIALIZE SMURF IS CALLED")
+            //console.log("state.smurfArray is ", state.smurfArray)
+            //console.log("action.payload is: ", action.payload[0])
         return { 
            ...state, 
            smurfArray: [
@@ -31,23 +31,18 @@ export const smurfReducer = ( state = initialState, action ) => {
          }; 
 
       case "GET_SMURF":
-         console.log("GET SMURF IS CALLED")
-         console.log("state.smurfArray is ", state.smurfArray)
-         console.log("action.payload is: ", action.payload)
+            //console.log("GET SMURF IS CALLED")
+            //console.log("state.smurfArray is ", state.smurfArray)
+            //console.log("action.payload is: ", action.payload)
         return { 
-           ...state, 
-           loading: false, 
+           ...state,  
            smurfArray: [ ...action.payload] }; 
       
       case "POST_SMURF":
-         console.log("POST SMURF IS CALLED")
+         //console.log("POST SMURF IS CALLED")
          return { 
             ...state,
             smurfArray:  [...state.smurfArray] 
-            // smurfArray: [...state.smurfArray, response.data.map( item => {
-            //    console.log("STATE- SMURF ARRAY: ", state.smurfArray)
-            //    console.log(item);
-            //    return item}) ]
          }; 
       
       default:

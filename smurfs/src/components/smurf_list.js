@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 function SmurfList(props) {
 
-   console.log("IN SMURFLIST ", props.smurfArray);
+   //console.log("IN SMURFLIST ", props.smurfArray);
 
       return (
          <SmurfListStyling>
@@ -14,8 +14,7 @@ function SmurfList(props) {
                      <p>{smurf.age}</p>
                      <p>{smurf.height}</p> 
                   </SmurfCard>   
-            )
-            }
+            )}
          </SmurfListStyling>
       )
 }

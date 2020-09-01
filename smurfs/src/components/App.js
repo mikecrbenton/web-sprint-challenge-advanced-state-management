@@ -12,7 +12,7 @@ function App ( props ) {
 
     // INITIALIZE THE DISPLAY FROM THE API
     useEffect(() => {
-      console.log("USE EFFECT IS CALLED");
+      //console.log("USE EFFECT IS CALLED");
       props.initializeSmurf();
    }, [initializeSmurf]);
  

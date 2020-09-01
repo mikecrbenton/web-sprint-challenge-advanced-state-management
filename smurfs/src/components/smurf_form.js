@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 function SmurfForm(props) {
 
+  // LOCAL STATE FOR FORM 
   const [newSmurf, setNewSmurf] = useState(
      {
         name: "",
@@ -12,7 +13,7 @@ function SmurfForm(props) {
         height: ""
      }
   )
- 
+  // CHANGE------------
   const changeHandler = e => {
      e.persist();
 
@@ -22,6 +23,7 @@ function SmurfForm(props) {
      });
   };
 
+  // SUBMIT------------
   const submitHandler = e => {
     e.preventDefault();
 
@@ -79,7 +81,7 @@ function SmurfForm(props) {
 
 const mapStateToProps = (state) => {
    return{
-     
+     // EMPTY- 
    }
 }
 
