@@ -1,3 +1,8 @@
+import { 
+   INITIALIZE_SMURF,
+   GET_SMURF,
+   POST_SMURF } from "../actions"
+
 
 let initialState = {
 
@@ -9,14 +14,13 @@ let initialState = {
        id : null 
       }
    ]
-
  };
 
 export const smurfReducer = ( state = initialState, action ) => {
 
    switch(action.type) {
 
-      case "INITIALIZE_SMURF":
+      case INITIALIZE_SMURF:
             //console.log("INITIALIZE SMURF IS CALLED")
             //console.log("state.smurfArray is ", state.smurfArray)
             //console.log("action.payload is: ", action.payload[0])
@@ -30,7 +34,7 @@ export const smurfReducer = ( state = initialState, action ) => {
            ] 
          }; 
 
-      case "GET_SMURF":
+      case GET_SMURF:
             //console.log("GET SMURF IS CALLED")
             //console.log("state.smurfArray is ", state.smurfArray)
             //console.log("action.payload is: ", action.payload)
@@ -38,7 +42,7 @@ export const smurfReducer = ( state = initialState, action ) => {
            ...state,  
            smurfArray: [ ...action.payload] }; 
       
-      case "POST_SMURF":
+      case POST_SMURF:
          //console.log("POST SMURF IS CALLED")
          return { 
             ...state,

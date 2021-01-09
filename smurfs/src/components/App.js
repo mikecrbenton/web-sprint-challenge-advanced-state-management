@@ -3,8 +3,8 @@ import "./App.css";
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import SmurfForm from './smurf_form';
-import SmurfList from './smurf_list';
+import SmurfForm from './AddForm';
+import SmurfDisplay from './SmurfDisplay';
 import { initializeSmurf } from '../actions/index'
 
 
@@ -20,7 +20,7 @@ function App ( props ) {
       <AppContainer className="App">
         <h1>SMURFS! W/Redux</h1>
         <SmurfForm/>
-        <SmurfList/>
+        <SmurfDisplay/>
       </AppContainer>
     );
 

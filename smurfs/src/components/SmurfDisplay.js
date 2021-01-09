@@ -2,18 +2,21 @@ import React from 'react'
 import { connect } from 'react-redux';
 import styled from 'styled-components'
 
-function SmurfList(props) {
+import Smurf from './Smurf'
 
-   //console.log("IN SMURFLIST ", props.smurfArray);
+function SmurfDisplay(props) {
+
+   //console.log("IN SMURFDISPLAY ", props.smurfArray);
 
       return (
          <SmurfListStyling>
             { props.smurfArray.map( (smurf) => 
-                  <SmurfCard key={smurf.id}>
-                     <p>{smurf.name}</p>
-                     <p>{smurf.age}</p>
-                     <p>{smurf.height}</p> 
-                  </SmurfCard>   
+                  <Smurf key={smurf.id}
+                     id={smurf.id}
+                     name={smurf.name}
+                     age={smurf.age}
+                     height={smurf.height}
+                  />
             )}
          </SmurfListStyling>
       )
@@ -25,7 +28,7 @@ const mapStateToProps = (state) => {
    }
 }
 
-export default connect( mapStateToProps, {} )(SmurfList);
+export default connect( mapStateToProps, {} )(SmurfDisplay);
 
 const SmurfListStyling = styled.div`
    display: flex;
