@@ -1,16 +1,36 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
-class App extends Component {
-  render() {
+import { connect } from 'react-redux';
+import styled from 'styled-components';
+
+import SmurfForm from './AddForm';
+import SmurfDisplay from './SmurfDisplay';
+import { initializeSmurf } from '../actions/index'
+
+
+function App ( props ) {
+
+    // INITIALIZE THE DISPLAY FROM THE API
+    useEffect(() => {
+      //console.log("USE EFFECT IS CALLED");
+      props.initializeSmurf();
+   }, [initializeSmurf]);
+ 
     return (
-      <div className="App">
+      <AppContainer className="App">
         <h1>SMURFS! W/Redux</h1>
-        <div>Welcome to your state management version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
-      </div>
+        <SmurfForm/>
+        <SmurfDisplay/>
+      </AppContainer>
     );
-  }
+
 }
 
-export default App;
+
+export default connect( null, { initializeSmurf })(App);
+
+const AppContainer = styled.div`
+   h1{
+      color: #88CCFF;
+   }
+`;

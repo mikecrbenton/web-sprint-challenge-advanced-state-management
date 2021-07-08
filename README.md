@@ -24,10 +24,29 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. What problem does the context API help solve?
+
+Context API essentially solve the same problems as Redux – it allow for sharing of data between components without having to prop drill across multiple levels
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+The store is a holding area, like an electrical plant – different components ( as they need ) can set up a powerline (connect) and access the resources they need 
+
+Actions are instructions and product.  They deliver an action to the right address by the TYPE, and the drop of the PAYLOAD package to the correct address
+
+A reducer is a consolidation of functions for global state – instead of functions residing throughout various components, they can connect to the reducer and run functions there, insuring that state is consistent throughout the app.
+
+
 3. What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+App state is global – it is needed when numerous components need access to the date.  In contrast, component level state would be like a form – when this is updated there is no need to update the entire app ( until of course submitting )
+
 4. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux thunk allows for multiple actions – it’s like sending a traffic director into the street, and when they see the different functions coming at them they stop them, send them on, or modify them as needed
+
 5. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+Hard to say at this point, but the more I use Redux and understand it, the less complicated it seems and I can start to see the utility in it – as for Context, don’t feel that I’ve used it enough yet 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
